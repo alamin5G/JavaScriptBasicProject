@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+            display: block;
+        }
+        h2{
+            color: blue;
+            display: block;
+        }
+        button{
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+<h1 id="magic">Hello World</h1>
+<h2 id="name">My name is John Doe</h2>
+<button type="button" id="disappear" onclick="disapper()">See Magic!</button>
+<button type="button" id="disappear" onclick="message()">Change Name!</button>
+
+<script>
+    function disapper(){
+       let hello =  document.getElementById("magic");
+       let name = document.getElementById("name");
+
+       if(hello.style.display === "block"){
+              hello.style.display = "none";
+              name.style.display = "block";
+       }else{
+            hello.style.display = "block";
+            name.style.display = "none";
+       }
+       
+    }
+
+    function message(){
+        let name = document.getElementById("name");
+        let hello = document.getElementById("magic");
+        let greet = prompt("Enter greeting message: ");
+        hello.innerText = hello.textContent + ", " +  greet;
+        let nameValue = prompt("Enter your name: ");
+        name.innerText = "My name is " + nameValue;
+    }
+</script>
+    
+</body>
+</html>
